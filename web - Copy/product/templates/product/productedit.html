@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block content %}
+<form autocomplete="off" method="POST" class="post-form" action="/product_update/{{product.pid}}">
+{% csrf_token %}
+<div class="container">
+<br>
+<div class="form-group row">
+<label class="col-sm-1 col-form-label"></label>
+<div class="col-sm-4">
+<h3>Update Details</h3>
+</div>
+</div>
+<div class="form-group row">
+<label class="col-sm-2 col-form-label">Product Id:</label>
+<div class="col-sm-4">
+<input type="text" name="pid" id="pid_pid" required maxlength="20" value="{{ product.pid }}"/>
+</div>
+</div>
+<div class="form-group row">
+<label class="col-sm-2 col-form-label">Product Name:</label>
+<div class="col-sm-4">
+<input type="text" name="name" id="pid_name" required maxlength="100" value="{{ product.name }}" />
+</div>
+</div>
+<div class="form-group row">
+<label class="col-sm-2 col-form-label">Product Type:</label>
+<div class="col-sm-4">
+<input type="text" name="type" id="pid_type" required maxlength="20" value="{{ product.type }}"/>
+</div>
+</div>
+<div class="form-group row">
+<label class="col-sm-2 col-form-label">Price:</label>
+<div class="col-sm-4">
+<input type="text" name="price" id="pid_price" required maxlength="20" value="{{ product.price }}"/>
+</div>
+</div>
+<div class="form-group row">
+<label class="col-sm-2 col-form-label">Unit:</label>
+<div class="col-sm-4">
+<input type="text" name="unit" id="pid_unit" required maxlength="20" value="{{ product.unit }}"/>
+</div>
+</div>
+<div class="form-group row">
+<label class="col-sm-2 col-form-label">Quality:</label>
+<div class="col-sm-4">
+<input type="number" name="quality" id="pid_quality" required maxlength="20" value="{{ product.quality }}"/>
+</div>
+</div>
+<div class="form-group row">
+<label class="col-sm-1 col-form-label"></label>
+<div class="col-sm-4">
+<button type="submit" class="btn btn-success">Update</button>
+</div>
+</div>
+</div>
+</form>
+{% endblock content %}

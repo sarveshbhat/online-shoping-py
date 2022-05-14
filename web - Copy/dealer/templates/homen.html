@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<form action="" onload="/testn">
+<!--    <h1>{{ user1.lic }}</h1>-->
+<table style ="background-color:#33475b" class="table table-striped table-bordered table-sm">
+<thead class="thead-dark">
+<center><b><h1>ORDERS</h1></b></center>
+<table style="background-color:light-blue">
+
+<tr>
+    <th>Order Number</th>
+    <th>Customer ID</th>
+    <th>Product Id</th>
+    <th>Product Name</th>
+    <th>Product Price</th>
+    <th>Product Quantity</th>
+    <th>Order Date</th>
+    <th>Status</th>
+    <th>Assign Dealer</th>
+    <th>Bill</th>
+    <th>Actions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+    {% for lic5 in lic5 %}
+     <td>{{ lic5.order_no}}</td>
+    <td>{{ lic5.id }}</td>
+    <td>{{ lic5.pid }}</td>
+    <td>{{ lic5.name }}</td>
+    <td>{{ lic5.price}}</td>
+    <td>{{ lic5.qty }}</td>
+    <td>{{ lic5.order_date }}</td>
+    <td>{{ lic5.status }}</td>
+    <td>{{ lic5.deal_id }}</td>
+    <td>{{ lic5.bill_amount }}</td>
+<td>
+<a href="/bill/{{ lic5.order_no }}"><span class="glyphicon glyphicon-pencil" >Bill</span></a>
+<a href="/supply/{{ lic5.order_no }}"><span class="glyphicon glyphicon-pencil" >Supply</span></a>
+    <a href="/bill_pdf/{{ lic5.order_no }}"><span class="glyphicon glyphicon-pencil" >Generate PDF</span></a>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+</table>
+    </form>
+<style>
+body {
+        background-image: url(/static/images/IMG-20210913-WA0017.jpg);
+}</style>
+<br>
+<br>
+<center>
+    <br>
+    <a href="/" class="btn btn-primary">Return Home</a>
+</center>
+{% endblock content %}
+NicePng_deal-png_2656925.png

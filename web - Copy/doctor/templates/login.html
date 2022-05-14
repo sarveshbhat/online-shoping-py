@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block content %}
+<form autocomplete="off" method="POST" action="/login_user" >
+        {% csrf_token %}
+        <div class="container col-4 border rounded p-3">
+            <div class = "bg-img">
+                <form action="/action_page.php" class="container">
+            <h3 class="mt-3 mb-4">Doctor LOGIN</h3>
+            <label>USERNAME</label>
+            <input type="text" autocomplete="off" name="username" placeholder="username"><br>
+            <br>
+            <label>PASSWORD </label>
+            <input type="password" autocomplete="off" name="password" placeholder="password"><br>
+            <br>
+                    <button class ="btn" type="submit">SUBMIT</button><br>
+                </form>
+            </div>
+        </div>
+</form>
+<br>
+<style>
+body {
+        background-image: url(/static/images/IMG-20210913-WA0028.jpg);
+}</style>
+<div>
+<br>
+    <a href="/" class="btn btn-primary">Return Home</a>
+</div>
+<div>
+    {% if messages %}
+    {% for message in messages %}
+    <h3> {{ message }} </h3>
+    {% endfor %}
+    {% endif %}
+</div>
+{% endblock %}

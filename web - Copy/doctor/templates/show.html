@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<table style ="background-color:#33475b" class="table table-striped table-bordered table-sm">
+    <thead class="thead-dark">
+    <table style="background-color:light-blue">
+    <center><b><h1>DOCTOR DETAILS</h1></b></center>
+    <tr>
+        <th>License Number</th>
+        <th>Doctor Name</th>
+        <th>Specialist</th>
+        <th>Clinic</th>
+        <th>City</th>
+        <th>Pin Code</th>
+        <th>Contact</th>
+        <th>Email</th>
+        <th>User Name</th>
+        <th>Password</th>
+        <th>Action</th>
+
+    </tr>
+    </thead>
+<tbody>
+{% for doctor in doctors %}
+<tr>
+    <td>{{ doctor.lic }}</td>
+    <td>{{ doctor.name }}</td>
+    <td>{{doctor.specialist}}</td>
+    <td>{{ doctor.clinic }}</td>
+    <td>{{ doctor.city }}</td>
+    <td>{{ doctor.pin }}</td>
+    <td>{{ doctor.contact }}</td>
+    <td>{{ doctor.email }}</td>
+    <td>{{doctor.username}}</td>
+    <td>{{doctor.password}}</td>
+
+<td>
+<a href="/edit/{{ doctor.lic }}"><span class="glyphicon glyphicon-pencil" >Edit</span></a>
+<a href="/delete/{{ doctor.lic}}"><span class="glyphicon glyphicon-pencil" >Delete</span></a>
+</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+<br>
+<br>
+<center>
+    <a href="/home_admin" class="btn btn-primary">Return Home</a>
+</center>
+{% endblock content %}

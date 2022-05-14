@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<table style="background-color:#33475b" class="table table-striped table-bordered table-sm">
+    <thead class="thead-dark">
+    <center><b><h1>FEEDBACKS</h1></b></center>
+    <table style="background-color:light-blue">
+        <tr>
+            <th>Feed Id</th>
+            <th>Customer Id</th>
+            <th>Dealer Id</th>
+            <th>Feedback</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        {% for feedback in feedbacks %}
+        <tr>
+            <td>{{ feedback.feed_id}}</td>
+            <td>{{ feedback.id }}</td>
+            <td>{{ feedback.lic }}</td>
+            <td>{{ feedback.feed }}</td>
+            <td>
+            </td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <br>
+    <br>
+    <center>
+        <a href="/home_admin" class="btn btn-primary">Return Home</a>
+    </center>
+    {% endblock content %}

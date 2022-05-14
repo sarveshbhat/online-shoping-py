@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<table style ="background-color:#33475b" class="table table-striped table-bordered table-sm">
+<thead class="thead-dark">
+<center><b><h1>ORDER DETAILS</h1></b></center>
+<table style="background-color:light-blue">
+
+<tr>
+    <th>Order Number</th>
+    <th>Customer Id</th>
+    <th>Medicine Name</th>
+    <th>Manufacturer</th>
+    <th>Quantity</th>
+    <th>Scale</th>
+    <th>Order Date</th>
+    <th>Prescribed Doctor</th>
+    <th>Doctor Status </th>
+    <th>Assigned Dealer</th>
+    <th>Alloted Status</th>
+</tr>
+</thead>
+<tbody>
+{% for medicinal_order in medicinal_orders %}
+<tr>
+    <td>{{ medicinal_order.order_no}}</td>
+    <td>{{ medicinal_order.id }}</td>
+    <td>{{ medicinal_order.med_name }}</td>
+    <td>{{ medicinal_order.manufacturer }}</td>
+    <td>{{ medicinal_order.qty }}</td>
+    <td>{{ medicinal_order.scale }}</td>
+    <td>{{ medicinal_order.order_date }}</td>
+    <td>{{ medicinal_order.lic }}</td>
+    <td>{{ medicinal_order.status }}</td>
+    <td>{{ medicinal_order.deal_id }}</td>
+    <td>{{ medicinal_order.allot_status }}</td>
+
+<td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+</table>
+<br>
+<br>
+<center>
+    <br>
+    <a href="/home_admin" class="btn btn-primary">Return Home</a>
+</center>
+{% endblock content %}

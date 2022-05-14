@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block content %}
+<form autocomplete="off" method="POST" class="post-form" action="/update/{{doctor.lic}}">
+{% csrf_token %}
+<div class="container">
+<br>
+<div class="form-group row">
+<label class="col-sm-1 col-form-label"></label>
+<div class="col-sm-4">
+<h3>Update Details</h3>
+</div>
+</div>
+<div class="form-group row">
+<label class="col-sm-2 col-form-label">License Number:</label>
+<div class="col-sm-4">
+<input type="text" name="lic" id="lic_lic" required maxlength="20" value="{{ doctor.lic }}"/>
+</div>
+</div>
+<div class="form-group row">
+<label class="col-sm-2 col-form-label">Doctor Name:</label>
+<div class="col-sm-4">
+<input type="text" name="name" id="lic_name" required maxlength="100" value="{{ doctor.name }}" />
+</div>
+</div>
+<div class="form-group row">
+<label class="col-sm-2 col-form-label">Specialist:</label>
+<div class="col-sm-4">
+<input type="text" name="specialist" id="lic_specialist" required maxlength="20" value="{{ doctor.specialist }}"/>
+</div>
+</div>
+<div class="form-group row">
+<label class="col-sm-2 col-form-label">Clinic:</label>
+<div class="col-sm-4">
+<input type="text" name="clinic" id="lic_clinic" required maxlength="20" value="{{ doctor.clinic }}"/>
+</div>
+</div>
+<div class="form-group row">
+<label class="col-sm-2 col-form-label">City:</label>
+<div class="col-sm-4">
+<input type="text" name="city" id="lic_city" required maxlength="20" value="{{ doctor.city }}"/>
+</div>
+</div>
+<div class="form-group row">
+<label class="col-sm-2 col-form-label">Pin Code:</label>
+<div class="col-sm-4">
+<input type="number" name="pin" id="lic_pin" required maxlength="20" value="{{ doctor.pin }}"/>
+</div>
+</div>
+<div class="form-group row">
+<label class="col-sm-2 col-form-label">Email:</label>
+<div class="col-sm-4">
+<input type="email" name="email" id="lic_email" required maxlength="254" value="{{ doctor.email }}" />
+</div>
+</div>
+<div class="form-group row">
+<label class="col-sm-2 col-form-label">Contact:</label>
+<div class="col-sm-4">
+<input type="number" name="contact" id="lic_contact" required maxlength="15" value="{{ doctor.contact }}" />
+</div>
+</div>
+<div class="form-group row">
+<label class="col-sm-2 col-form-label">User Name:</label>
+<div class="col-sm-4">
+<input type="text" name="username" id="lic_username" required maxlength="20" value="{{ doctor.username }}"/>
+</div>
+</div>
+<div class="form-group row">
+<label class="col-sm-2 col-form-label">Password:</label>
+<div class="col-sm-4">
+<input type="password" name="password" id="lic_password" required maxlength="20" value="{{ doctor.password }}"/>
+</div>
+</div>
+<div class="form-group row">
+<label class="col-sm-1 col-form-label"></label>
+<div class="col-sm-4">
+<button type="submit" class="btn btn-success">Update</button>
+</div>
+</div>
+</div>
+</form>
+{% endblock content %}

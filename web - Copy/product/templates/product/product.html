@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block content %}
+<form autocomplete="off" method="POST" class="post-form" action="/product">
+        {% csrf_token %}
+    <div class="container">
+<br>
+    <div class="form-group row">
+    <label class="col-sm-1 col-form-label"></label>
+    <div class="col-sm-4">
+    <h3> PRODUCT ENTRY</h3>
+    </div>
+</div>
+<div class="form-group row">
+    <label class="col-sm-2 col-form-label">Product Id:</label>
+    <div class="col-sm-4">
+        {{ form.pid }}
+    </div>
+</div>
+<div class="form-group row">
+    <label class="col-sm-2 col-form-label">Product Name:</label>
+    <div class="col-sm-4">
+        {{ form.name }}
+    </div>
+</div>
+    <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Product Type:</label>
+    <div class="col-sm-4">
+        {{ form.type }}
+    </div>
+</div>
+    <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Price:</label>
+    <div class="col-sm-4">
+        {{ form.price }}
+    </div>
+ </div>
+</div>
+    <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Unit:</label>
+    <div class="col-sm-4">
+        {{ form.unit }}
+    </div>
+ </div>
+</div>
+    <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Quality:</label>
+    <div class="col-sm-4">
+        {{ form.quality }}
+    </div>
+</div>
+    <div class="form-group row">
+        <label class="col-sm-1 col-form-label"></label>
+        <div class="col-sm-4">
+        <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </div>
+    <a href="/product_detail" class="btn btn-primary">View Products</a>
+    <br>
+    <br>
+    <a href="/home_admin" class="btn btn-primary">Return Home</a>
+    </div>
+</form>
+<div>
+    {% if messages %}
+    {% for message in messages %}
+    <h3> {{ message }} </h3>
+    {% endfor %}
+    {% endif %}
+</div>
+{% endblock content %}

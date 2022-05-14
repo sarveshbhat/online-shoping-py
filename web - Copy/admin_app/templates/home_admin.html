@@ -1,0 +1,108 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">ADMIN</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <b><a class="nav-link" href="/allots">ALLOT MEDICINES<span class="sr-only">(current)</span></a></b>
+      </li>
+      <li class="nav-item active">
+        <b><a class="nav-link" href="/allot">ALLOT GENERAL ORDERS</a></b>
+      </li>
+
+<!--      <li class="nav-item dropdown">-->
+<!--        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
+<!--          VIEW-->
+<!--        </a>-->
+<!--        <div class="dropdown-menu" aria-labelledby="navbarDropdown">-->
+        <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          VIEW
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <b><a class="dropdown-item" href="/product">PRODUCT ENTRY</a></b>
+          <b><a class="dropdown-item" href="/product_detail">PRODUCTS DETAILS</a></b>
+          <b><a class="dropdown-item" href="/doc">DOCTOR REGISTRATION</a></b>
+          <b><a class="dropdown-item" href="/deal">DEALER REGISTRATION</a></b>
+          <b><a class="dropdown-item" href="/order_detail">GENERAL ORDER DETAIL</a></b>
+          <b><a class="dropdown-item" href="/medicinal_order_detail">MEDICINAL ORDER DETAIL</a></b>
+          <b><a class="dropdown-item" href="/show">DOCTOR DETAIL</a></b>
+          <b><a class="dropdown-item" href="/shown">DEALER DETAIL</a></b>
+          <b><a class="dropdown-item" href="/shows">CUSTOMER DETAIL</a></b>
+          <b><a class="dropdown-item" href="/feedbacks">FEEDBACK</a></b>
+          <b><a class="dropdown-item" href="/complaints">COMPLAINTS</a></b>
+
+      </li>
+
+
+    </ul>
+<b><a class="btn btn-primary" href="/" role="button">LOGOUT</a></b>
+  </div>
+</nav>
+</head>
+<style>
+	body{
+		background-image: url(/static/images/admin.jpg);
+		}
+</style>
+<body>
+
+<!-- top-brands -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
+
+<!--{% load crispy_forms_tags %}-->
+<!--{% load static %}-->
+<!--{% block content %}-->
+<!--<form autocomplete="off" method="POST" action="/home_admin" >-->
+<!--        {% csrf_token %}-->
+<!--        <div class="container col-4 border rounded p-3">-->
+<!--            <div class = "bg-img">-->
+<!--                <form action="/action_page.php" class="container">-->
+<!--            <div><center><b><h1><a href="/product" class="btn btn-primary">Product Entry</a></h1></b></center></div>-->
+<!--                    <br>-->
+<!--                    <div><center><b><h1><a href="/product_detail" class="btn btn-primary">Product Detail</a></h1></b></center></div>-->
+<!--                    <br>-->
+<!--                    <div><center><b><h1><a href="/doc" class="btn btn-primary">Doctor Registration</a></h1></b></center></div>-->
+<!--                    <br>-->
+<!--                    <div><center><b><h1><a href="/deal" class="btn btn-primary">Dealer Registration</a></h1></b></center></div>-->
+<!--                    <br>-->
+<!--                    <div><center><b><h1><a href="/order_detail" class="btn btn-primary">General Order Detail</a></h1></b></center></div>-->
+<!--                    <br>-->
+<!--                    <div><center><b><h1><a href="/medicinal_order_detail" class="btn btn-primary">Medicinal Order Detail</a></h1></b></center></div>-->
+<!--                    <br>-->
+<!--                    <div><center><b><h1><a href="/allot" class="btn btn-primary">Allot Orders</a></h1></b></center></div>-->
+<!--                    <br>-->
+<!--                    <div><center><b><h1><a href="/allots" class="btn btn-primary">Allot Medicine</a></h1></b></center></div>-->
+<!--                    <br>-->
+<!--                    <div><center><b><h1><a href="/show" class="btn btn-primary">Doctor_Detail</a></h1></b></center></div>-->
+<!--                    <br>-->
+<!--                    <div><center><b><h1><a href="/shown" class="btn btn-primary">Dealer_Detail</a></h1></b></center></div>-->
+<!--                    <br>-->
+<!--                    <div><center><b><h1><a href="/shows" class="btn btn-primary">Customer_Detail</a></h1></b></center></div>-->
+<!--                    <br>-->
+<!--                    <div><center><b><h1><a href="/feedbacks" class="btn btn-primary">Feedbacks</a></h1></b></center></div>-->
+<!--                    <br>-->
+<!--                    <div><center><b><h1><a href="/complaints" class="btn btn-primary">Complaints</a></h1></b></center></div>-->
+<!--                </form>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--</form>-->
+<!--<br>-->
+<!--<br>-->
+<!--</div>-->
+<!--    <a href="/" class="btn btn-primary">Return Home</a>-->
+<!--</div>-->
+<!--{% endblock %}-->

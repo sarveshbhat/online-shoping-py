@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block content %}
+<form autocomplete="off" method="POST" class="post-form" action="/complaint_registration">
+        {% csrf_token %}
+    <div class="container">
+<br>
+    <div class="form-group row">
+    <label class="col-sm-1 col-form-label"></label>
+    <div class="col-sm-4">
+    <h3> COMPLAINT REGISTRATION </h3>
+    </div>
+</div>
+<div class="form-group row">
+    <label class="col-sm-2 col-form-label">Complaint ID:</label>
+    <div class="col-sm-4">
+        {{ form.comp_id}}
+    </div>
+</div>
+<div class="form-group row">
+    <label class="col-sm-2 col-form-label">Customer_Id:</label>
+    <div class="col-sm-4">
+        {{ form.id }}
+    </div>
+</div>
+    <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Complaint_On:</label>
+    <div class="col-sm-4">
+        {{ form.lic }}
+    </div>
+</div>
+    <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Complaint:</label>
+    <div class="col-sm-4">
+        {{ form.complaint }}
+    </div>
+</div>
+    <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Date:</label>
+    <div class="col-sm-4">
+        {{ form.date }}
+    </div>
+ </div>
+</div>
+    <div class="form-group row">
+        <label class="col-sm-1 col-form-label"></label>
+        <div class="col-sm-4">
+        <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </div>
+    <a href="/homes" class="btn btn-primary">Return Home</a>
+    </div>
+</form>
+<div>
+    {% if messages %}
+    {% for message in messages %}
+    <h3> {{ message }} </h3>
+    {% endfor %}
+    {% endif %}
+</div>
+{% endblock content %}

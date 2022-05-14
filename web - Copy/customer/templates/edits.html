@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block content %}
+<form autocomplete="off" method="POST" class="post-form" action="/updates/{{customer.id}}">
+{% csrf_token %}
+<div class="container">
+<br>
+<div class="form-group row">
+<label class="col-sm-1 col-form-label"></label>
+<div class="col-sm-4">
+<h3>Update Details</h3>
+</div>
+</div>
+<div class="form-group row">
+<label class="col-sm-2 col-form-label">Customer Id:</label>
+<div class="col-sm-4">
+<input type="text" name="id" id="id_id" required maxlength="20" value="{{ customer.id }}"/>
+</div>
+</div>
+<div class="form-group row">
+<label class="col-sm-2 col-form-label">Customer Name:</label>
+<div class="col-sm-4">
+<input type="text" name="name" id="id_name" required maxlength="100" value="{{ customer.name }}" />
+</div>
+</div>
+<div class="form-group row">
+<label class="col-sm-2 col-form-label">City:</label>
+<div class="col-sm-4">
+<input type="text" name="city" id="id_city" required maxlength="20" value="{{ customer.city }}"/>
+</div>
+</div>
+<div class="form-group row">
+<label class="col-sm-2 col-form-label">Pin Code:</label>
+<div class="col-sm-4">
+<input type="number" name="pin" id="id_pin" required maxlength="20" value="{{ customer.pin }}"/>
+</div>
+</div>
+<div class="form-group row">
+<label class="col-sm-2 col-form-label">Email:</label>
+<div class="col-sm-4">
+<input type="email" name="email" id="id_email" required maxlength="254" value="{{ customer.email }}"/>
+</div>
+</div>
+<div class="form-group row">
+<label class="col-sm-2 col-form-label">Contact:</label>
+<div class="col-sm-4">
+<input type="number" name="contact" id="id_contact" required maxlength="15" value="{{ customer.contact }}" />
+</div>
+</div>
+<div class="form-group row">
+<label class="col-sm-2 col-form-label">User Name:</label>
+<div class="col-sm-4">
+<input type="text" name="username" id="id_username" required maxlength="20" value="{{ customer.username }}"/>
+</div>
+</div>
+<div class="form-group row">
+<label class="col-sm-2 col-form-label">Password:</label>
+<div class="col-sm-4">
+<input type="password" name="password" id="id_password" required maxlength="20" value="{{ customer.password }}"/>
+</div>
+</div>
+<div class="form-group row">
+<label class="col-sm-1 col-form-label"></label>
+<div class="col-sm-4">
+<button type="submit" class="btn btn-success">Update</button>
+</div>
+</div>
+</div>
+</form>
+{% endblock content %}

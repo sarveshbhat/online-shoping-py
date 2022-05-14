@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<table style ="background-color:#33475b" class="table table-striped table-bordered table-sm">
+<thead class="thead-dark">
+<center><b><h1>ORDER DETAILS</h1></b></center>
+<table style="background-color:light-blue">
+<tr>
+    <th>Order Number</th>
+    <th>Customer ID</th>
+    <th>Product Id</th>
+    <th>Product Name</th>
+    <th>Product Price</th>
+    <th>Product Quantity</th>
+    <th>Order Date</th>
+    <th>Status</th>
+    <th>Assign Dealer</th>
+    <th>Bill</th>
+</tr>
+</thead>
+<tbody>
+{% for item_order in item_orders %}
+<tr>
+    <td>{{ item_order.order_no}}</td>
+    <td>{{ item_order.id }}</td>
+    <td>{{ item_order.pid }}</td>
+    <td>{{ item_order.name }}</td>
+    <td>{{ item_order.price}}</td>
+    <td>{{ item_order.qty }}</td>
+    <td>{{ item_order.order_date }}</td>
+    <td>{{ item_order.status }}</td>
+    <td>{{ item_order.deal_id }}</td>
+    <td>{{ item_order.bill_amount }}</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+<br>
+<br>
+<center>
+    <br>
+    <a href="/home_admin" class="btn btn-primary">Return Home</a>
+</center>
+{% endblock content %}

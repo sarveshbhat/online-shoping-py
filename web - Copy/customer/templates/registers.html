@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block content %}
+<form autocomplete="off" method="POST" class="post-form" action="/cust">
+        {% csrf_token %}
+    <div class="container">
+<br>
+    <div class="form-group row">
+    <label class="col-sm-1 col-form-label"></label>
+    <div class="col-sm-4">
+    <h3> Customer Registartion</h3>
+    </div>
+</div>
+<div class="form-group row">
+    <label class="col-sm-2 col-form-label">Customer Id:</label>
+    <div class="col-sm-4">
+        {{ form.id }}
+    </div>
+</div>
+<div class="form-group row">
+    <label class="col-sm-2 col-form-label">Customer Name:</label>
+    <div class="col-sm-4">
+        {{ form.name }}
+    </div>
+</div>
+    <div class="form-group row">
+    <label class="col-sm-2 col-form-label">City:</label>
+    <div class="col-sm-4">
+        {{ form.city }}
+    </div>
+</div>
+    <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Pin Code:</label>
+    <div class="col-sm-4">
+        {{ form.pin }}
+    </div>
+ </div>
+</div>
+    <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Contact:</label>
+    <div class="col-sm-4">
+        {{ form.contact }}
+    </div>
+ </div>
+</div>
+    <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Email:</label>
+    <div class="col-sm-4">
+        {{ form.email }}
+    </div>
+</div>
+    <div class="form-group row">
+    <label class="col-sm-2 col-form-label">User Name:</label>
+    <div class="col-sm-4">
+        {{ form.username }}
+    </div>
+</div>
+    <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Password:</label>
+    <div class="col-sm-4">
+        {{ form.password }}
+    </div>
+ </div>
+    <div class="form-group row">
+        <label class="col-sm-1 col-form-label"></label>
+        <div class="col-sm-4">
+        <button type="submit" class="btn btn-primary" onclick="">Submit</button>
+        </div>
+    </div>
+    <a href="/logins" class="btn btn-primary">Already a user?Login</a>
+    <br>
+    <a href="/" class="btn btn-primary">Return Home</a>
+    </div>
+</form>
+</body>
+<div>
+    {% if messages %}
+    {% for message in messages %}
+    <h3> {{ message }} </h3>
+    {% endfor %}
+    {% endif %}
+</div>
+{% endblock content %}

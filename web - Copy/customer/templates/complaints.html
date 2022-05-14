@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<table style ="background-color:#33475b" class="table table-striped table-bordered table-sm">
+<thead class="thead-dark">
+<center><b><h1>COMPLAINTS</h1></b></center>
+<table style="background-color:light-blue">
+<tr>
+    <th>Complaint Id</th>
+    <th>Customer Id</th>
+    <th>Complaint On</th>
+    <th>Complaint</th>
+    <th>Status</th>
+    <th>Date</th>
+    <th>Actions</th>
+
+</tr>
+</thead>
+<tbody>
+{% for complaint_registration in complaint_registrations %}
+<tr>
+    <td>{{ complaint_registration.comp_id}}</td>
+    <td>{{ complaint_registration.id }}</td>
+    <td>{{ complaint_registration.lic }}</td>
+    <td>{{ complaint_registration.complaint}}</td>
+    <td>{{ complaint_registration.status }}</td>
+    <td>{{ complaint_registration.date}}</td>
+<td>
+
+    <a href="/view/{{ complaint_registration.comp_id }}"><span class="glyphicon glyphicon-pencil" >Viewed</span></a>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+<br>
+<br>
+<center>
+    <a href="/home_admin" class="btn btn-primary">Return Home</a>
+</center>
+{% endblock content %}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BILL</title>
+</head>
+<body>
+    <br>
+    <br>
+    <br>
+    <table border="1" align="center">
+    <tr style="font-size: 50px">
+        <th colspan="4" bgcolor="PINK" >    {{ deal.shop }}     </th>
+    </tr>
+    <tr>
+        <th colspan="4" align="left" style="font-size: 20px">PHONE NUMBER: {{ deal.contact }}</th>
+    </tr>
+    <tr>
+        <th colspan="4" align="left" style="font-size: 20px">EMAIL ID: {{ deal.email }}</th>
+    </tr>
+    <tr>
+        <th colspan="4" align="left" style="font-size: 20px">ORDER NUMBER: {{ order.order_no }}</th>
+    </tr>
+    <tr>
+        <th colspan="4" align="left" style="font-size: 20px">ORDER DATE: {{ order.order_date }}</th>
+    </tr>
+    <tr>
+        <th style="font-size: 20px">PRODUCT NAME</th>
+        <th style="font-size: 20px">QUANTITY</th>
+        <th style="font-size: 20px">PRICE</th>
+        <th style="font-size: 20px">TOTAL</th>
+    </tr>
+    <tr>
+        <th style="font-size: 20px">{{ order.name }}</th>
+        <th style="font-size: 20px">{{ order.qty }}</th>
+        <th style="font-size: 20px">{{ order.price }}</th>
+        <th style="font-size: 20px">{{ order.bill_amount }}</th>
+    </tr>
+    <tr>
+         <th colspan="3" align="left" style="font-size: 20px"> GRAND TOTAL</th>
+         <th style="font-size: 20px">{{ order.bill_amount }}</th>
+     </tr>
+    </table>
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block content %}
+<form autocomplete="off" method="POST" class="post-form" action="/general_item_order" onload="/load">
+        {% csrf_token %}
+    <div class="container">
+<br>
+    <div class="form-group row">
+    <label class="col-sm-1 col-form-label"></label>
+    <div class="col-sm-4">
+    <h3> ITEM ORDERS </h3>
+    </div>
+</div>
+    <label>Order Number:</label><br>
+    <input type = "number" name="order_no" placeholder=" Enter Order number" value={{ order_n.order_no }}><br>
+</div>
+<div class="form-group row">
+    <label>Customer ID:</label><br>
+    <input type = "number" name="id" placeholder="Enter Customer Id"><br>
+</div>
+<div class="form-group row">
+    <label>Product_name:</label><br>
+    <input type = "text" name="name" placeholder="Enter Product Name"  readonly value={{ prod.name }}><br>
+</div>
+<div class="form-group row">
+    <label>Product_Id:</label><br>
+    <input type = "text" name="pid" placeholder="Enter Product Id" readonly  value= {{ prod.pid }}><br>
+</div>
+<div class="form-group row">
+    <label>Price:</label><br>
+    <input type = "text" name="price" placeholder=" Enter Price" readonly value= {{ prod.price }} ><br>
+</div>
+ <div class="form-group row">
+    <label>Qty:</label><br>
+    <input type = "number" name="qty" placeholder="Quantity"><br>
+</div>
+<div class="form-group row">
+    <label>Order Date:</label><br>
+    <input type = "date" name="order_date" placeholder="Order Date"><br>
+</div>
+<div class="form-group row">
+    <input type="submit">
+</div>
+</form>
+<div>
+    {% if messages %}
+    {% for message in messages %}
+    <h3> {{ message }} </h3>
+    {% endfor %}
+    {% endif %}
+</div>
+{% endblock content %}
